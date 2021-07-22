@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <h1>Add new task</h1>
+    </header>
+
+    <div>
+        <form class="form-add" action="/new" method="POST">
+            <input type="text" name="content" id="name" autofocus value="<%= task.content %>" placeholder="Enter a task" required>
+            <input type="date" name="date" id="date" value="<%= task.date %>">
+            <div class="bottom">
+                <a class="btn-cancel" href="/" class="">Cancel</a>
+                <button class="btn-valid" type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

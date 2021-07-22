@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <h1>All tasks</h1>
+    </header>
+
+    <div>
+        <h2>A faire</h2>
+        <div>
+            <% tasksActualDate.forEach(task => { %>
+                <div class="task" onclick="location.href='/edit/<%= task.id %>'">
+                    <form class="form-task" action="/finished/<%= task.id %>?_method=PUT" method="POST">
+                        <input type="checkbox" name="checkbox_task" id="checkbox_task" value="false" onchange="this.form.submit()">
+                    </form>
+                    <div class="task-info">
+                        <h3 class="task-content"><%= task.content %></h3>
+                        <span class="task-date"><%= task.date.toLocaleDateString() %></span>
+                    </div>
+                </div>
+            <% }); %>
+
+            <% tasksActualNoDate.forEach(task => { %>
+                <div class="task" onclick="location.href='/edit/<%= task.id %>'">
+                    <form action="/finished/<%= task.id %>?_method=PUT" method="POST">
+                        <input class="checkbox_task" type="checkbox" name="checkbox_task" id="checkbox_task" value="false" onchange="this.form.submit()">
+                    </form>
+                    <div class="task-info">
+                        <h3 class="task-content"><%= task.content %></h3>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <div>        
+        <div>
+            <h2>Terminé</h2>
+            <% tasksFinished.forEach(task => { %>
+                <div class="task finished" onclick="location.href='/edit/<%= task.id %>'">
+                    <form class="form-task" action="/finished/<%= task.id %>?_method=PUT" method="POST">
+                        <input type="checkbox" name="checkbox_task" id="checkbox_task" checked="true" onchange="this.form.submit()">
+                    </form>
+                    <div class="task-info">
+                        <h3 class="task-content"><%= task.content %></h3>
+                        <% if (task.date) { %>
+                            <span><%= task.date.toLocaleDateString() %></span>
+                        <% } %>
+                    </div>
+                </div>
+
+            <% }); %>
+        </div>
+        
+        
+    </div>
+
+    <a class="btn-add" href="/new">+ Add a New Task</a>
+</body>
+</html>

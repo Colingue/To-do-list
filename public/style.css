@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap');
+
+body{
+    background-color: rgb(255, 255, 255);
+    font-family: Cabin;
+    margin: 40px 20px;
+    color: rgb(53, 53, 53);
+    padding-bottom: 40px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 22px;
+}
+
+.task{
+    background-color: rgb(240, 244, 247);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 8px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.task:hover{
+    background-color: rgb(234, 239, 243);
+}
+
+.task-info{
+    margin-left: 20px;
+}
+
+.task-content{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.task-date{
+    font-size: 14px;
+    color: rgb(168, 168, 168);
+}
+
+.form-task{
+    display: flex;
+    align-items: center;
+}
+
+.task.finished{
+    opacity: 0.5;
+}
+
+.btn-add{
+    background-color: rgb(255, 115, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    width: calc(100% - 40px);
+    border-radius: 12px;
+    color: white;
+    height: 40px;
+}
+
+.form-add input{
+    width: 100%;
+    font-size: 20px;
+    font-family: Cabin;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.btn-valid{
+    background-color: rgb(255, 115, 0);
+    border-radius: 12px;
+    color: white;
+    width: 80px;
+    height: 40px;
+    border: none;
+    font-family: Cabin;
+    font-size: 16px;
+    width: 80px;
+}
+
+.btn-cancel{
+    border: 1px solid rgb(255, 115, 0);
+    border-radius: 12px;
+    color: rgb(255, 115, 0);
+    width: 80px;
+    font-family: Cabin;
+    font-size: 16px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.form-add .bottom{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
